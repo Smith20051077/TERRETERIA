@@ -1,23 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Ferretería Don Leo | Quibdó</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Ferretería Don Leo | Quibdó</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --principal: #ff9800;
+    --principal-oscuro: #e68900;
+    --oscuro: #1f1f1f;
+    --claro: #f4f4f4;
+    --blanco: #ffffff;
+    --verde: #25D366;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--claro);
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, var(--oscuro), #000);
+    color: var(--blanco);
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 { margin: 0; font-size: 2.2rem; }
+header p { margin-top: 8px; }
+
+/* NAV */
+nav {
+    background: var(--principal);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--blanco);
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover { background: var(--principal-oscuro); }
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(255,152,0,0.85),rgba(255,152,0,0.85));
+    color: var(--blanco);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* SECCIONES */
+.section {
+    background: var(--blanco);
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 1100px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: var(--principal);
+    border-bottom: 2px solid var(--principal);
+    padding-bottom: 5px;
+}
+
+/* PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.card p {
+    font-weight: bold;
+    color: var(--principal);
+}
+
+/* BOTONES */
+button {
+    background: var(--principal);
+    border: none;
+    color: var(--blanco);
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover { background: var(--principal-oscuro); }
+
+/* CARRITO */
+#lista li {
+    list-style: none;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ccc;
+}
+
+#lista button {
+    background: crimson;
+    padding: 5px 10px;
+}
+
+/* FORMULARIOS */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--verde);
+    color: var(--blanco);
+    font-size: 30px;
+    padding: 14px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* MAPA */
+iframe {
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
 
-<!-- BOTÓN WHATSAPP -->
-<a href="#" class="whatsapp" target="_blank">💬</a>
+<a href="#" class="whatsapp">💬</a>
 
-<!-- HEADER -->
 <header>
     <h1>Ferretería Don Leo</h1>
     <p>Quibdó – Todo para construcción y hogar</p>
 </header>
 
-<!-- NAV -->
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
@@ -25,78 +186,113 @@
     <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- INICIO -->
 <section id="inicio" class="hero">
     <h2>La ferretería de confianza en Quibdó</h2>
     <p>Calidad, buen precio y atención cercana</p>
 </section>
 
-<!-- PRODUCTOS -->
 <section id="productos" class="section">
-    <h2>Catálogo de Productos</h2>
+<h2>Productos</h2>
+<div class="productos">
 
-    <div class="productos">
-        <div class="card">
-            <h3>Martillo</h3>
-            <p>$25.000</p>
-            <button onclick="agregar('Martillo',25000)">Agregar</button>
-        </div>
+<div class="card">
+<h3>Martillo</h3>
+<p>$25.000</p>
+<button onclick="agregar('Martillo',25000)">Agregar</button>
+</div>
 
-        <div class="card">
-            <h3>Taladro</h3>
-            <p>$180.000</p>
-            <button onclick="agregar('Taladro',180000)">Agregar</button>
-        </div>
+<div class="card">
+<h3>Taladro</h3>
+<p>$180.000</p>
+<button onclick="agregar('Taladro',180000)">Agregar</button>
+</div>
 
-        <div class="card">
-            <h3>Pintura Blanca</h3>
-            <p>$45.000</p>
-            <button onclick="agregar('Pintura Blanca',45000)">Agregar</button>
-        </div>
+<div class="card">
+<h3>Pintura Blanca</h3>
+<p>$45.000</p>
+<button onclick="agregar('Pintura Blanca',45000)">Agregar</button>
+</div>
 
-        <div class="card">
-            <h3>Cemento</h3>
-            <p>$38.000</p>
-            <button onclick="agregar('Cemento',38000)">Agregar</button>
-        </div>
-    </div>
+</div>
 </section>
 
 <section id="carrito" class="section">
-    <h2>🛒 Carrito de Compras</h2>
+<h2>🛒 Carrito</h2>
 
-    <input type="text" id="cliente" placeholder="Nombre del cliente">
-    <input type="text" id="direccion" placeholder="Dirección de entrega">
+<input type="text" id="cliente" placeholder="Nombre del cliente">
+<input type="text" id="direccion" placeholder="Dirección de entrega">
 
-    <ul id="lista"></ul>
-    <h3>Total: $<span id="total">0</span></h3>
-    <button onclick="pagar()">Finalizar pedido</button>
+<ul id="lista"></ul>
+<h3>Total: $<span id="total">0</span></h3>
+
+<button onclick="pagar()">Finalizar pedido</button>
 </section>
-<!-- CONTACTO -->
+
 <section id="contacto" class="section">
-    <h2>Contáctanos</h2>
+<h2>Contacto</h2>
+<p>📍 Quibdó, Chocó</p>
+<p>📞 WhatsApp: TUNUMERO</p>
 
-    <form onsubmit="return false;">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo" required>
-        <textarea placeholder="Mensaje"></textarea>
-        <button>Enviar mensaje</button>
-    </form>
-
-    <div class="info">
-        <p>📍 Quibdó, Chocó</p>
-        <p>📞 WhatsApp: 3125775491</p>
-        <p>🕒 Lunes a Sábado: 7:00 AM – 6:00 PM</p>
-    </div>
-
-    <iframe src="https://www.google.com/maps?q=Quibdó%20Chocó%20Colombia&output=embed"></iframe>
+<iframe src="https://www.google.com/maps?q=Quibdó%20Chocó%20Colombia&output=embed"></iframe>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2025 Ferretería Don Leo – Quibdó</p>
+<p>© 2025 Ferretería Don Leo – Quibdó</p>
 </footer>
 
-<script src="ferreteria .js"></script>
+<script>
+let carrito = [];
+let total = 0;
+
+function agregar(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    actualizar();
+}
+
+function actualizar() {
+    const lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    carrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.nombre} - $${item.precio}
+        <button onclick="eliminar(${index})">❌</button>`;
+        lista.appendChild(li);
+    });
+
+    document.getElementById("total").textContent = total;
+}
+
+function eliminar(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizar();
+}
+
+function pagar() {
+    const cliente = document.getElementById("cliente").value.trim();
+    const direccion = document.getElementById("direccion").value.trim();
+
+    if (!cliente || !direccion || carrito.length === 0) {
+        alert("Complete los datos y el carrito");
+        return;
+    }
+
+    let mensaje = `🧾 PEDIDO – FERRETERÍA DON LEO (QUIBDÓ)\n\n`;
+    mensaje += `👤 Cliente: ${cliente}\n`;
+    mensaje += `📍 Dirección: ${direccion}\n\n`;
+
+    carrito.forEach(p => {
+        mensaje += `• ${p.nombre} - $${p.precio}\n`;
+    });
+
+    mensaje += `\n💰 Total: $${total}`;
+
+    const numero = "573125775491"; // CAMBIAR
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+}
+</script>
+
 </body>
 </html>
