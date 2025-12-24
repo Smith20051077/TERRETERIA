@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ferretería Don Leo | Quibdó</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BOTÓN WHATSAPP -->
+<a href="#" class="whatsapp" target="_blank">💬</a>
+
+<!-- HEADER -->
+<header>
+    <h1>Ferretería Don Leo</h1>
+    <p>Quibdó – Todo para construcción y hogar</p>
+</header>
+
+<!-- NAV -->
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- INICIO -->
+<section id="inicio" class="hero">
+    <h2>La ferretería de confianza en Quibdó</h2>
+    <p>Calidad, buen precio y atención cercana</p>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="section">
+    <h2>Catálogo de Productos</h2>
+
+    <div class="productos">
+        <div class="card">
+            <h3>Martillo</h3>
+            <p>$25.000</p>
+            <button onclick="agregar('Martillo',25000)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <h3>Taladro</h3>
+            <p>$180.000</p>
+            <button onclick="agregar('Taladro',180000)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <h3>Pintura Blanca</h3>
+            <p>$45.000</p>
+            <button onclick="agregar('Pintura Blanca',45000)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <h3>Cemento</h3>
+            <p>$38.000</p>
+            <button onclick="agregar('Cemento',38000)">Agregar</button>
+        </div>
+    </div>
+</section>
+
+<section id="carrito" class="section">
+    <h2>🛒 Carrito de Compras</h2>
+
+    <input type="text" id="cliente" placeholder="Nombre del cliente">
+    <input type="text" id="direccion" placeholder="Dirección de entrega">
+
+    <ul id="lista"></ul>
+    <h3>Total: $<span id="total">0</span></h3>
+    <button onclick="pagar()">Finalizar pedido</button>
+</section>
+<!-- CONTACTO -->
+<section id="contacto" class="section">
+    <h2>Contáctanos</h2>
+
+    <form onsubmit="return false;">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje"></textarea>
+        <button>Enviar mensaje</button>
+    </form>
+
+    <div class="info">
+        <p>📍 Quibdó, Chocó</p>
+        <p>📞 WhatsApp: 3125775491</p>
+        <p>🕒 Lunes a Sábado: 7:00 AM – 6:00 PM</p>
+    </div>
+
+    <iframe src="https://www.google.com/maps?q=Quibdó%20Chocó%20Colombia&output=embed"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Ferretería Don Leo – Quibdó</p>
+</footer>
+
+<script src="ferreteria .js"></script>
+</body>
+</html>
